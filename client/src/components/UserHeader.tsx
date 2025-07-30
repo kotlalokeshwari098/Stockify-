@@ -1,6 +1,6 @@
-import React, { useState, useRef, useEffect } from 'react';
+import  { useState, useRef, useEffect } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { FaStore, FaShoppingCart, FaHeart, FaBox, FaUser, FaSignOutAlt, FaChevronDown } from 'react-icons/fa';
+import { FaStore, FaShoppingCart,  FaBox, FaUser, FaSignOutAlt, FaChevronDown } from 'react-icons/fa';
 
 const UserHeader = () => {
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
