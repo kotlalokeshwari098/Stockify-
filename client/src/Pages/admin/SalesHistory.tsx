@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { FaCalendar, FaChevronDown, FaChevronUp, FaSearch } from 'react-icons/fa';
 
 interface SaleProduct {

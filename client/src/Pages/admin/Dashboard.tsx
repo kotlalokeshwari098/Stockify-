@@ -1,6 +1,7 @@
 import React from 'react';
 import { FiDollarSign, FiUsers, FiPackage, FiActivity } from 'react-icons/fi';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import type { IconType } from 'react-icons';
 
 const mockData = [
   { month: 'Jan', sales: 4000 },
@@ -11,7 +12,15 @@ const mockData = [
   { month: 'Jun', sales: 2390 },
 ];
 
-const DashboardCard = ({ title, value, icon: Icon, trend, color }) => (
+interface DashboardCardProps {
+  title: string;
+  value: string | number;
+  icon: IconType;
+  trend: number;
+  color: string;
+}
+
+const DashboardCard: React.FC<DashboardCardProps> = ({ title, value, icon: Icon, trend, color }) => (
   <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
     <div className="flex items-center justify-between mb-4">
       <div className={`p-3 rounded-xl ${color}`}>

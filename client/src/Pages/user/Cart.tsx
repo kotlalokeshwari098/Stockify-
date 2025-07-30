@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { useCart } from '../../context/CartContext';
 import { FaTrash, FaMinus, FaPlus } from 'react-icons/fa';
 import toast from 'react-hot-toast';

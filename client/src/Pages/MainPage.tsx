@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaUser, FaChartLine, FaBox, FaShoppingCart, FaCalendarAlt, FaArrowRight, FaPlay, FaCheckCircle } from 'react-icons/fa';
+import { FaUser, FaChartLine, FaBox, FaShoppingCart, FaCalendarAlt, FaArrowRight, FaCheckCircle } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 
 const MainPage: React.FC = () => {

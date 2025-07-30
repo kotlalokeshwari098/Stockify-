@@ -1,5 +1,5 @@
-import React, { useState, useRef } from 'react';
-import { FaSearch, FaTimes, FaPrint, FaPlus } from 'react-icons/fa';
+import  { useState, useRef } from 'react';
+import { FaSearch, FaTimes, FaPrint} from 'react-icons/fa';
 
 interface Product {
   id: number;
