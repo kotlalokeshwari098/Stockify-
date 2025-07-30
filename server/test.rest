@@ -1,0 +1,99 @@
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6InVzZXIiLCJpYXQiOjE3NTM3OTc5ODQsImV4cCI6MTc1Mzg4NDM4NH0.qIa4v8Vt3Gbkjr1ZdzKgwAfKzXBkeFBbSQn82HKOqjY
+@url=http://localhost:5000
+# @token1=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzUzNzkwODIzLCJleHAiOjE3NTM4NzcyMjN9.Wv99mPMlDHZoVXSdeRP0s7PT0w-2dm9ne6FTgNRDza0
+@token2=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwicm9sZSI6InVzZXIiLCJpYXQiOjE3NTM4MDUxMTEsImV4cCI6MTc1Mzg5MTUxMX0.N6MZZDfECs-7MWNqRFlLnaX0z5zP5DWKgwZZzQbc5w4
+
+###register user 
+POST {{url}}/register
+Content-Type: application/json
+
+{
+  "name": "John",
+  "email": "john@example.com",
+  "password": "123456",
+  "role": "user"   
+}
+
+###register user 
+POST {{url}}/register
+Content-Type: application/json
+
+{
+  "name": "John",
+  "email": "john@example.com",
+  "password": "123456",
+  "role": "user"   
+}
+
+###register user 
+POST {{url}}/register
+Content-Type: application/json
+
+{
+  "name": "Alice",
+  "email": "alice@example.com",
+  "password": "password123",
+  "role": "user"
+}
+
+
+
+###
+POST {{url}}/login
+Content-Type: application/json
+
+{
+  "email": "john@example.com",
+  "password": "123456"
+}
+
+###
+POST {{url}}/login
+Content-Type: application/json
+
+{
+  "email": "alice@example.com",
+  "password": "password123"
+}
+
+
+
+###
+GET {{url}}/user/profile
+Authorization: Bearer {{token}}
+
+
+//to get all products
+###
+GET {{url}}/user/products
+Authorization: Bearer {{token}}
+
+//to get a specific category products
+###
+GET {{url}}/user/products/category/Vegetables
+Authorization: Bearer {{token}}
+
+
+//to place an order user2
+###
+POST {{url}}/user/orders
+Authorization: Bearer {{token2}}
+Content-Type: application/json
+
+{
+  "product_id": 2,
+  "quantity": 2,
+  "total_price": 550
+}
+
+//to place an order user1
+###
+POST {{url}}/user/orders
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "product_id": 1,
+  "quantity": 7,
+  "total_price": 1050
+}

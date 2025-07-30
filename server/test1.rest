@@ -1,0 +1,111 @@
+@url=http://localhost:5000
+@token1=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzUzNzkwODIzLCJleHAiOjE3NTM4NzcyMjN9.Wv99mPMlDHZoVXSdeRP0s7PT0w-2dm9ne6FTgNRDza0
+
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6ImFkbWluIiwiaWF0IjoxNzUzNzkyOTE1LCJleHAiOjE3NTM4NzkzMTV9.lJpk0yWhjqKIcVmjfrXmRZoUKZIZl4OuMwvPOoj7EV4
+
+###register admin
+POST {{url}}/register
+Content-Type: application/json
+
+{
+  "name": "siri",
+  "email": "siri@example.com",
+  "password": "123456",
+  "role": "admin"
+}
+
+
+###register admin
+POST {{url}}/register
+Content-Type: application/json
+
+{
+  "name": "akshu",
+  "email": "akshu@example.com",
+  "password": "123456",
+  "role": "admin"
+}
+
+###
+POST {{url}}/login
+Content-Type: application/json
+
+{
+  "email": "akshu@example.com",
+  "password": "123456"
+}
+
+
+###
+POST {{url}}/login
+Content-Type: application/json
+
+{
+  "email": "loki@example.com",
+  "password": "123456"
+}
+
+###
+POST {{url}}/admin/products
+Content-Type: application/json
+Authorization: Bearer {{token1}}
+
+{
+    "product_name": "Banana - Yelakki",
+    "selling_price": 45,
+    "description": "Naturally ripened small bananas",
+    "stock_quantity": 80,
+    "product_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7tkJbeFrBbXbgToGHEg3OGPUroS4yl2IgSQ&s",
+    "category": "Fruits",
+    "status": "active"
+  }
+
+###
+POST {{url}}/admin/products
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "product_name": "Pomegranate",
+    "selling_price": 90,
+    "description": "Sweet ruby-red pomegranates",
+    "stock_quantity": 40,
+    "product_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaYpJWDS54bVYo43N5iO5ye7hrY2L4gen_kw&s
+    ",
+    "category": "Fruits",
+    "status": "active"
+  }
+
+###
+GET {{url}}/admin/products
+Authorization: Bearer {{token1}}
+
+###
+GET {{url}}/admin/products
+Authorization: Bearer {{token}}
+
+
+###
+GET {{url}}/admin/products/4
+Authorization: Bearer {{token1}}
+
+###
+PUT {{url}}/admin/products/3
+Content-Type: application/json
+Authorization: Bearer {{token1}}
+
+{
+  "product_name": "UpdatedLaptop",
+  "selling_price": 899.99,
+  "stock_quantity": 15,
+  "status": "available"
+}
+
+###
+DELETE {{url}}/admin/products/1
+Authorization: Bearer {{token1}}
+
+
+###
+GET {{url}}/admin/orders
+Authorization: Bearer {{token}}
