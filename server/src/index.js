@@ -10,8 +10,21 @@ const router = require('./routes/admin.routes.js');
 const userRouter = require('./routes/user.routes.js');
 
 const PORT= 5000
+const allowedOrigins = [
+  process.env.FRONTEND_API_URL?.trim().replace(/\/$/, ""),
+  process.env.FRONTEND_URL?.trim().replace(/\/$/, ""),
+].filter(Boolean);
 
-app.use(cors());
+app.use(
+  cors({
+    origin: allowedOrigins,
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
+  })
+);
+
+app.options("/{*any}", cors());
 
 app.post('/register', registerUser);
 app.post('/login', loginUser);
